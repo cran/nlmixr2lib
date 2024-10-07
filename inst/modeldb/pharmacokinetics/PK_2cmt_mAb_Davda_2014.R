@@ -1,6 +1,7 @@
 PK_2cmt_mAb_Davda_2014 <- function() {
   description <- "Two compartment PK model with linear clearance for average monoclonal antibodies (Davda 2014)"
   reference <- "Davda JP, Dodds MG, Gibbs MA, Wisdom W, Gibbs JP. A model-based meta-analysis of monoclonal antibody pharmacokinetics to guide optimal first-in-human study design. MAbs. 2014;6(4):1094-1102. doi:10.4161/mabs.29095"
+  units = list(time = "day", dosing = "mg")
   ini({
     lfdepot <- log(0.744) ; label("Subcutaneous bioavailability (fraction)")
     lka <- log(0.282) ; label("Absorption rate (Ka, 1/day)")
@@ -31,8 +32,9 @@ PK_2cmt_mAb_Davda_2014 <- function() {
     v <- exp(lv + allov*wtnorm + etav)
     vp <- exp(lvp + allov*wtnorm + etavp)
 
-    # Units are dosing units/L (typically mg/L = ug/mL)
-    linCmt() ~ prop(prop.err)
-    f(depot) <- fdepot
+    Cc <- linCmt()
+    
+    f(depot) <- fdepot  # Units are dosing units/L (typically mg/L = ug/mL)
+    Cc ~ prop(prop.err)
   })
 }

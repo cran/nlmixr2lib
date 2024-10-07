@@ -4,13 +4,17 @@
 \alias{addResErr}
 \title{Add residual error to a model}
 \usage{
-addResErr(model, reserr)
+addResErr(ui, reserr, endpoint)
 }
 \arguments{
-\item{model}{The model as a function}
+\item{ui}{The model as a function}
 
-\item{reserr}{The type or types of residual error (currently \code{"addSd"},
-\code{"propSd"}, and \code{"lnormSd"} are accepted)}
+\item{reserr}{The type or types of residual error (currently
+\code{"addSd"}, \code{"propSd"}, and \code{"lnormSd"} are
+accepted)}
+
+\item{endpoint}{the endpoint to apply the error; will default to
+the first error in the model}
 }
 \value{
 The model with residual error modified
@@ -21,12 +25,12 @@ Add residual error to a model
 \details{
 For \code{reserr}, the parameter will be named with the dependent
   variable from the model as a prefix.  For example, if the dependent
-  variable in the model is \code{cp}, the parameter name for \code{propSd}
-  will become \code{cppropSd}.
+  variable in the model is \code{Cc}, the parameter name for \code{propSd}
+  will become \code{CcpropSd}.
 }
 \examples{
 library(rxode2)
-readModelDb("PK_1cmt") \%>\% addResErr("addSd")
-readModelDb("PK_1cmt") \%>\% addResErr("lnormSd")
-readModelDb("PK_1cmt") \%>\% addResErr(c("addSd", "propSd"))
+readModelDb("PK_1cmt") |> addResErr("addSd")
+readModelDb("PK_1cmt") |> addResErr("lnormSd")
+readModelDb("PK_1cmt") |> addResErr(c("addSd", "propSd"))
 }

@@ -1,5 +1,7 @@
 Kovalenko_2020_dupilumab <- function() {
+  description <- "Dupilumab PK model (Kovalenko 2020)"
   reference <- "Kovalenko P, Davis JD, Li M, et al. Base and Covariate Population Pharmacokinetic Analyses of Dupilumab Using Phase 3 Data. Clinical Pharmacology in Drug Development. 2020;9(6):756-767. doi:10.1002/cpdd.780"
+  units<-list(time="day", dosing="mg")
   # Model 1 from table 1 and supplementary Table 2 in the publication and its
   # supplement.
   covariateData <-
@@ -18,13 +20,14 @@ Kovalenko_2020_dupilumab <- function() {
     lfdepot <- log(0.643); label("Bioavailability (fraction)")
     e_wt_vc <- 0.711; label("Exponent of weight on central volume (unitless)")
 
-    etalvc ~ 0.285
-    etalke ~ 0.474
+    etalvc ~ 0.192
+    etalke ~ 0.285
+    etalka ~ 0.474
     etalvm ~ 0.236
     etamtt ~ 0.525 # etamtt is assumed to be on log-scale MTT to prevent negative values; this is a difference relative to Supplementary Table 2
 
-    cppropSd <- 0.15; label("Proportional residual error (fraction)")
-    cpaddSd <- fixed(0.03); label("Additive residual error (mg/L)")
+    CcpropSd <- 0.15; label("Proportional residual error (fraction)")
+    CcaddSd <- fixed(0.03); label("Additive residual error (mg/L)")
   })
   model({
     # Weight normalization to 75 kg is assumed based on prior publication.  It
@@ -36,7 +39,7 @@ Kovalenko_2020_dupilumab <- function() {
     vc <- exp(lvc + etalvc)*(WT/75)^e_wt_vc
     ke <- exp(lke + etalke)
     kcp <- exp(lkcp)
-    ka <- exp(lka)
+    ka <- exp(lka + etalka)
     MTT <- exp(lMTT + etamtt)
     Vm <- exp(lVm + etalvm)
 
@@ -55,7 +58,7 @@ Kovalenko_2020_dupilumab <- function() {
     f(depot) <- exp(lfdepot)
     # No unit conversion is required to change mg/L (dosing amount/central
     # volume unit) to mg/L (measurement unit)
-    cp <- central/vc
-    cp ~ add(cpaddSd) + prop(cppropSd)
+    Cc <- central/vc
+    Cc ~ add(CcaddSd) + prop(CcpropSd)
   })
 }

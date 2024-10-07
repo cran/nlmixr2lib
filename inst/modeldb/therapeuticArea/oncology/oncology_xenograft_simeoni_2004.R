@@ -1,6 +1,8 @@
 oncology_xenograft_simeoni_2004 <- function() {
   description <- "Oncology tumor growth model in xenograft models"
   reference <- "Monica Simeoni, Paolo Magni, Cristiano Cammia, Giuseppe De Nicolao, Valter Croci, Enrico Pesenti, Massimiliano Germani, Italo Poggesi, Maurizio Rocchetti; Predictive Pharmacokinetic-Pharmacodynamic Modeling of Tumor Growth Kinetics in Xenograft Models after Administration of Anticancer Agents. Cancer Res 1 February 2004; 64 (3): 1094–1101. https://doi.org/10.1158/0008-5472.CAN-03-2524"
+  depends<- "Cc"
+  units<-list(time="day")
   # Values for damageTransit (k1), drugSlope (k2), tumorExpGrowth (lambda0),
   # tumorLinGrowth (lambda1) are from paclitaxel experiment 1 reported in Table
   # 2 from the reference (limits are not from the reference). The values from
@@ -25,9 +27,9 @@ oncology_xenograft_simeoni_2004 <- function() {
     cyclingCells(0) <- tumorVol0
     psi <- 20 # psi is defined in the paper to cause a rapid switch between exponential and linear regimes
     tumorVol <- cyclingCells + damagedCells1 + damagedCells2 + damagedCells3
-    # cp is provided in the data (or in an appended model) as the drug
-    # concentration.  Units for cp will be apply to k2.
-    drugEffectCyclingCells <- drugSlope*cp
+    # Cc is provided in the data (or in an appended model) as the drug
+    # concentration.  Units for Cc will be apply to k2.
+    drugEffectCyclingCells <- drugSlope*Cc
     d/dt(cyclingCells) <- tumorExpGrowth*cyclingCells/(1 + (tumorExpGrowth/tumorLinGrowth * tumorVol)^psi)^(1/psi) - drugEffectCyclingCells*cyclingCells
     d/dt(damagedCells1) <- drugEffectCyclingCells*cyclingCells - damageTransit*damagedCells1
     d/dt(damagedCells2) <- damageTransit*(damagedCells1 - damagedCells2)
