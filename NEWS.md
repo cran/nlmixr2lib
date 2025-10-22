@@ -1,5 +1,11 @@
 # nlmixr2lib
 
+# Version 0.3.1
+
+* Bug fix for replacement of multiplicative expressions in `nlmixr2lib`
+* phenylalanine_charbonneau_2021 had its net protein breakdown parameter corrected
+* Kyhl_2016_nalmefene model was added
+
 # Version 0.3.0
 
 * Added ability to choose style type when modifying models.  Currently

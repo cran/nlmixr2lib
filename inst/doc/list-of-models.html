@@ -48,8 +48,9 @@ overflow: visible;
 }
 </style>
 <style type="text/css" data-origin="pandoc">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -60,7 +61,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
 { counter-reset: source-line 0; }
@@ -558,57 +559,69 @@ order absorptions</td>
 2017)</td>
 </tr>
 <tr class="odd">
+<td align="left">Grimm_2023_gantenerumab</td>
+<td align="left">Gantenerumab PK model (Grimm 2017)</td>
+</tr>
+<tr class="even">
+<td align="left">Grimm_2023_trontinemab</td>
+<td align="left">Trontinemab PK model (Grimm 2017)</td>
+</tr>
+<tr class="odd">
 <td align="left">Kovalenko_2020_dupilumab</td>
 <td align="left">Dupilumab PK model (Kovalenko 2020)</td>
 </tr>
 <tr class="even">
+<td align="left">Kyhl_2016_nalmefene</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
 <td align="left">Soehoel_2022_tralokinumab</td>
 <td align="left">Tralokinumab PK model (Soehoel 2022)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">Zhu_2017_lebrikizumab</td>
 <td align="left">Lebrikizumab PK model (Zhu 2017)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">oncology_sdm_lobo_2002</td>
 <td align="left">Signal transduction model for delayed concentration
 effects on cancer cell growth</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">oncology_xenograft_simeoni_2004</td>
 <td align="left">Oncology tumor growth model in xenograft models</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">tgi_no_sat_Koch</td>
 <td align="left">One compartment TGI model with with exponential tumor
 growth, without saturation.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">tgi_no_sat_expo</td>
 <td align="left">One compartment TGI model with with exponential tumor
 growth, without saturation.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">tgi_no_sat_linear</td>
 <td align="left">One compartment TGI model with with linear tumor
 growth, without saturation.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">tgi_no_sat_powerLaw</td>
 <td align="left">One compartment TGI model with with exponential tumor
 growth, without saturation.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">tgi_sat_VonBertalanffy</td>
 <td align="left">One compartment TGI model where tumor growth is limited
 by a loss term, with saturation.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">tgi_sat_genVonBertalanffy</td>
 <td align="left">One compartment TGI model where tumor growth is limited
 by a loss term, with saturation.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">tgi_sat_logistic</td>
 <td align="left">One compartment TGI model with with exponential tumor
 growth that decelerates linearly, with saturation.</td>

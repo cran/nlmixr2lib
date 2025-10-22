@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>Kyhl_2016_nalmefene</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
+<style type="text/css" data-origin="pandoc">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Kyhl_2016_nalmefene</h1>
+
+
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(nlmixr2lib)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<div id="nalmefene-replication" class="section level1">
+<h1>Nalmefene replication</h1>
+<p>Replicate figures 5 in the publication with a single 20 mg dose in
+the fed state. Assumed the mean age, lean body mass, a tablet, and the
+LC-MS/MS assay was used. The paper indicates that simulations used a
+uniform age distribution of 18-80 years and LBM of
+<code>~N(56,72)</code>. Since no limits were provided for LBM in the
+simulation settings, these simulation settings were not used.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>dSimDose <span class="ot">&lt;-</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>    <span class="at">ID =</span> <span class="dv">1</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>    <span class="at">AMT =</span> <span class="dv">20</span>, <span class="co"># mg/kg</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>    <span class="at">TIME =</span> <span class="dv">0</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>    <span class="at">EVID =</span> <span class="dv">1</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>    <span class="at">CMT =</span> <span class="st">&quot;depot&quot;</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>  )</span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>dSimObs <span class="ot">&lt;-</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>    <span class="at">ID =</span> <span class="dv">1</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>    <span class="at">AMT =</span> <span class="dv">0</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>    <span class="at">WT =</span> <span class="dv">5</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>    <span class="at">TIME =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">24</span>, <span class="at">by =</span> <span class="fl">0.1</span>),</span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>    <span class="at">EVID =</span> <span class="dv">0</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a>    <span class="at">CMT =</span> <span class="st">&quot;central&quot;</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a>  )</span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>dSimPrep <span class="ot">&lt;-</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">bind_rows</span>(dSimDose, dSimObs) <span class="sc">|&gt;</span></span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a>    <span class="at">LBM =</span> <span class="fl">56.28</span>,</span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a>    <span class="at">AGE =</span> <span class="dv">28</span>,</span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a>    <span class="at">RIA_ASSAY =</span> <span class="dv">0</span>,</span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a>    <span class="at">FED =</span> <span class="dv">1</span>,</span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a>    <span class="at">TABLET =</span> <span class="dv">1</span></span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a>  )</span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a>Kyhl2016Nalmefene <span class="ot">&lt;-</span> <span class="fu">readModelDb</span>(<span class="st">&quot;Kyhl_2016_nalmefene&quot;</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a><span class="co"># Set BSV to zero for simulation to get a reproducible result</span></span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a>dSimNalmefene <span class="ot">&lt;-</span> rxode2<span class="sc">::</span><span class="fu">rxSolve</span>(Kyhl2016Nalmefene, <span class="at">events =</span> dSimPrep, <span class="at">nStud =</span> <span class="dv">500</span>)</span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a>dSimNalmefene<span class="sc">$</span>Analyte <span class="ot">&lt;-</span> <span class="st">&quot;Nalmefene&quot;</span></span></code></pre></div>
+<div id="plot-plasma-pk" class="section level2">
+<h2>Plot plasma PK</h2>
+<p>Replicate figure 5 from the paper. Assuming that the “confidence
+bounds” are actually 95% prediction intervals.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>dSimNalmefenePlot <span class="ot">&lt;-</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  dSimNalmefene <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>  <span class="fu">group_by</span>(time) <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>    <span class="at">Q025_pk =</span> <span class="fu">quantile</span>(sim, <span class="at">probs =</span> <span class="fl">0.025</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>    <span class="at">Q50_pk =</span> <span class="fu">quantile</span>(sim, <span class="at">probs =</span> <span class="fl">0.5</span>),</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>    <span class="at">Q975_pk =</span> <span class="fu">quantile</span>(sim, <span class="at">probs =</span> <span class="fl">0.975</span>),</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>    <span class="at">Q025_occ =</span> <span class="fu">quantile</span>(e_mu_opioid, <span class="at">probs =</span> <span class="fl">0.025</span>),</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>    <span class="at">Q50_occ =</span> <span class="fu">quantile</span>(e_mu_opioid, <span class="at">probs =</span> <span class="fl">0.5</span>),</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>    <span class="at">Q975_occ =</span> <span class="fu">quantile</span>(e_mu_opioid, <span class="at">probs =</span> <span class="fl">0.975</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>  )</span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="fu">ggplot</span>(dSimNalmefenePlot, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> Q50_pk, <span class="at">ymin =</span> Q025_pk, <span class="at">ymax =</span> Q975_pk)) <span class="sc">+</span></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Time (h)&quot;</span>,</span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Estimated plasma concentration (ng mL^-1)&quot;</span></span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">fill =</span> <span class="st">&quot;gray&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">24</span>, <span class="at">by =</span> <span class="dv">5</span>))</span></code></pre></div>
+<p><img role="img" src="data:image/png;base64,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" /><!-- --></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">ggplot</span>(dSimNalmefenePlot, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> Q50_occ, <span class="at">ymin =</span> Q025_occ, <span class="at">ymax =</span> Q975_occ)) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Time (h)&quot;</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Occupancy (%)&quot;</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">fill =</span> <span class="st">&quot;gray&quot;</span>) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">90</span>)) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">24</span>, <span class="at">by =</span> <span class="dv">5</span>))</span></code></pre></div>
+<p><img role="img" src="data:image/png;base64,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" /><!-- --></p>
+</div>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

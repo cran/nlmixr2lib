@@ -1,0 +1,77 @@
+## ----include = FALSE----------------------------------------------------------
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+## ----setup--------------------------------------------------------------------
+library(nlmixr2lib)
+library(dplyr)
+library(ggplot2)
+
+## ----model-setup-nalmefene----------------------------------------------------
+dSimDose <-
+  data.frame(
+    ID = 1,
+    AMT = 20, # mg/kg
+    TIME = 0,
+    EVID = 1,
+    CMT = "depot"
+  )
+dSimObs <-
+  data.frame(
+    ID = 1,
+    AMT = 0,
+    WT = 5,
+    TIME = seq(0, 24, by = 0.1),
+    EVID = 0,
+    CMT = "central"
+  )
+dSimPrep <-
+  dplyr::bind_rows(dSimDose, dSimObs) |>
+  dplyr::mutate(
+    LBM = 56.28,
+    AGE = 28,
+    RIA_ASSAY = 0,
+    FED = 1,
+    TABLET = 1
+  )
+Kyhl2016Nalmefene <- readModelDb("Kyhl_2016_nalmefene")
+# Set BSV to zero for simulation to get a reproducible result
+dSimNalmefene <- rxode2::rxSolve(Kyhl2016Nalmefene, events = dSimPrep, nStud = 500)
+dSimNalmefene$Analyte <- "Nalmefene"
+
+## ----plot-plasma--------------------------------------------------------------
+dSimNalmefenePlot <-
+  dSimNalmefene |>
+  group_by(time) |>
+  summarize(
+    Q025_pk = quantile(sim, probs = 0.025),
+    Q50_pk = quantile(sim, probs = 0.5),
+    Q975_pk = quantile(sim, probs = 0.975),
+    Q025_occ = quantile(e_mu_opioid, probs = 0.025),
+    Q50_occ = quantile(e_mu_opioid, probs = 0.5),
+    Q975_occ = quantile(e_mu_opioid, probs = 0.975)
+  )
+
+ggplot(dSimNalmefenePlot, aes(x = time, y = Q50_pk, ymin = Q025_pk, ymax = Q975_pk)) +
+  geom_line() +
+  labs(
+    x = "Time (h)",
+    y = "Estimated plasma concentration (ng mL^-1)"
+  ) +
+  geom_ribbon(fill = "gray") +
+  geom_line() +
+  scale_x_continuous(breaks = seq(0, 24, by = 5))
+
+ggplot(dSimNalmefenePlot, aes(x = time, y = Q50_occ, ymin = Q025_occ, ymax = Q975_occ)) +
+  geom_line() +
+  labs(
+    x = "Time (h)",
+    y = "Occupancy (%)"
+  ) +
+  geom_ribbon(fill = "gray") +
+  geom_line() +
+  geom_hline(yintercept = c(60, 90)) +
+  scale_x_continuous(breaks = seq(0, 24, by = 5))
+
